@@ -17,6 +17,7 @@ const StoriesToReview = () => {
         })
         .catch(err => console.log(err.res))
     };
+    
 
     useEffect(() => {
         getStories();
