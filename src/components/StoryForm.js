@@ -2,6 +2,64 @@ import React, { useState, useEffect } from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import styled from 'styled-components';
+
+const Division = styled.div`
+
+`;
+
+const Container = styled(Form)`
+    display: flex;
+    flex-direction: row;
+`;
+
+const StoryContainer = styled.div`
+display: flex;
+flex-direction: column;
+width: 35%;
+
+
+`;
+
+const TextArea =styled(Field)`
+    width: 600px;
+	height: 120px;
+  border: 2px solid #5A5D80;
+  border-radius: 10px;
+	padding: 15px;
+	
+	
+  
+`;
+
+const InfoContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
+width: 40%;
+height:20%;
+margin-top: 53px;
+`;
+
+const Inputs = styled(Field)`
+    border: 2px solid #5A5D80;
+    border-radius: 10px;
+    color: #E04F56;
+    width: 40%;
+    height: 20px;
+    margin: 10px;
+    padding: 10px;
+`;
+
+const Button = styled.button`
+    background: #E04F56;
+    width: 45%;
+    height: 40px;
+    margin: 10px;
+    color: white; 
+    border: 2px solid #5A5D80;
+    border-radius: 15px;
+
+`;
 
 const StoryForm = ({ errors, touched, status }) => {
   const [stories, setStories] = useState([]);
@@ -12,38 +70,45 @@ const StoryForm = ({ errors, touched, status }) => {
   }, [status]);
 
   return (
-    <div className="story-form">
-      <Form>
-        <Field type="text" name="title" placeholder="Title" />
-        {touched.title && errors.title && (<p className="error">{errors.title}</p>)}
+    <Division>
 
-        <Field type="text" name="name" placeholder="Name" />
-        {touched.name && errors.name && (<p className="error">{errors.name}</p>)}
+      <Container>
+        <StoryContainer>
+          <Inputs type="text" name="title" placeholder="Title" />
+          {touched.title && errors.title && (<p className="error">{errors.title}</p>)}
 
-        <Field type="text" name="email" placeholder="E-mail" />
-        {touched.email && errors.email && <p className="error">{errors.email}</p>}
+          <label>    
+            <TextArea
+              component="textarea"
+              type="text"
+              name="story"
+              placeholder="Story"
+              style={{height: '250px', width: '400px'}}
+            />
+          </label>
+        </StoryContainer>
 
-        <Field type="date" name="date" placeholder="Date" />
-        {touched.date && errors.date && <p className="error">{errors.date}</p>}
+        <InfoContainer>
+          <Inputs type="text" name="name" placeholder="Name" />
+          {touched.name && errors.name && (<p className="error">{errors.name}</p>)}
 
-        <Field component="select" className="country-select" name="country">
-          <option>Please Choose an Country</option>
-          <option value="country1">Country1</option>
-          <option value="country2">Country2</option>
-          <option value="country3">Country3</option>
-        </Field>
-        <label>
-          
-          <Field
-            component="textarea"
-            type="text"
-            name="story"
-            placeholder="Story"
-            style={{height: '250px', width: '400px'}}
-          />
-        </label>
-        <button>Submit!</button>
-      </Form>
+          <Inputs type="text" name="email" placeholder="E-mail" />
+          {touched.email && errors.email && <p className="error">{errors.email}</p>}
+
+          <Inputs type="date" name="date" placeholder="Date" />
+          {touched.date && errors.date && <p className="error">{errors.date}</p>}
+
+          <Inputs component="select" className="country-select" name="country">
+            <option>Please Choose an Country</option>
+            <option value="country1">Country1</option>
+            <option value="country2">Country2</option>
+            <option value="country3">Country3</option>
+          </Inputs>
+          <Button>Submit!</Button>
+        </InfoContainer>
+
+
+      </Container>
       {stories.map(story => (
         <ul key={story.id}>
           <li>Title:{story.title}</li>
@@ -54,7 +119,7 @@ const StoryForm = ({ errors, touched, status }) => {
           <li>Story: {story.story}</li>
         </ul>
       ))}
-    </div>
+    </Division>
   );
 };
 const FormikStoryForm = withFormik({
