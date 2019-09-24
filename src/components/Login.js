@@ -65,7 +65,7 @@ const FormikLoginForm = withFormik({
       .then(res => {
         console.log(res.data)
         localStorage.setItem('token', res.data.token);
-        props.history.push('/dashboard');
+        props.history.push('/Dashboard');
         setStatus();
       })
       .catch(err => console.log(err.res));

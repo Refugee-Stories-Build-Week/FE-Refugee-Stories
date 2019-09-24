@@ -4,10 +4,10 @@ import StoriesToReview from './StoriesToReview';
 const Dashboard = () => {
     return (
         <div className="dahsboard">
-        <StoriesToReview />
+             <StoriesToReview />
 
         </div>
     )
 }
 
-export default StoriesToReview;
+export default Dashboard;

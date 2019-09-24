@@ -3,7 +3,7 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 import Stories from '../components/Stories';
 
 
-const HomeView = () => {
+const Home = () => {
     const [storyList, setStoryList] = useState([]);
 
     const getStories = () => {
@@ -29,4 +29,4 @@ const HomeView = () => {
     )
 }
 
-export default HomeView;
+export default Home;
