@@ -1,16 +1,18 @@
 import React from 'react';
-
 import './App.css';
-import StoriesToReview from './components/admin/StoriesToReview';
-import StoryContext from '../src/contexts/StoryContext';
 
+//components
+import Dashboard from './components/admin/Dashboard';
 import Home from './components/Home';
-import Login from './components/Login'
+import Login from './components/Login';
+
+//context
+import StoryContext from '../src/contexts/StoryContext';
 
 function App() {
   return (
     <div className="App">
-      {/* <StoriesToReview /> */}
+      
       <Home /> 
       <Login />
     </div>
