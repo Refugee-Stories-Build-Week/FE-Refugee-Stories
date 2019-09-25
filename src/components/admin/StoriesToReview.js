@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth'
-import StoryCard from './Submit';
+import StoryCard from './StoryToReview';
 
 const StoriesToReview = () => {
     const [stories, setStories] = useState([]);
