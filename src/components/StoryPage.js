@@ -1,6 +1,6 @@
 import React,{ useState } from "react"
 import styled from 'styled-components'
-import Axios from 'axios';
+import axios from 'axios';
 
 export default function StoryPage (props){
     const Heading = styled.h2`
@@ -29,7 +29,7 @@ margin-left:-5rem;
     `
     const [story,setStory] = useState([])
 
-    Axios.get(
+    axios.get(
         'https://refugee--stories.herokuapp.com/users/'
       )
       .then(response => setStory(response))

@@ -57,7 +57,7 @@ const Button = styled.button`
     background: #E04F56;
     width: 25%;
     height: 40px;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     color: white; 
     border: 2px solid #5A5D80;
     border-radius: 5px;
@@ -128,7 +128,7 @@ const FormikStoryForm = withFormik({
   //You can use this to see the values
   handleSubmit(values, { setStatus }) {
     axios
-      .post("https://reqres.in/api/users/", values)
+      .post("https://refugee--stories.herokuapp.com/stories/submit", values)
       .then(res => {
         setStatus(res.data);
       })

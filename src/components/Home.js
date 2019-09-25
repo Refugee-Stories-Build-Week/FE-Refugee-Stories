@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import Stories from '../components/Stories';
+import StoryForm from "./StoryForm";
 
 
 const Home = () => {
@@ -24,7 +25,7 @@ const Home = () => {
         <div className="home-container">
         <Stories stories={storyList}/>
         {/* <Carousel /> */}
-
+        <StoryForm />
         </div>
     )
 }
