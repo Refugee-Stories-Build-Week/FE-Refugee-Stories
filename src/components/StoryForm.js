@@ -137,9 +137,9 @@ const FormikStoryForm = withFormik({
     email: Yup.string().required()
   }),
   //You can use this to see the values
-  handleSubmit(values, { setStatus }) {
+  handleSubmit(values, { props, setStatus }) {
     axios
-      .post("https://reqres.in/api/users/", values)
+      .post("https://refugee--stories.herokuapp.com/stories/submit", values)
       .then(res => {
         setStatus(res.data);
       })

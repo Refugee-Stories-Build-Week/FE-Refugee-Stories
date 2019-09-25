@@ -42,7 +42,7 @@ const [request,setRequest] = useState([])
     return (
         <div>
               
-            <Heading>{request.title}</Heading>
+        <Heading>{request.title}</Heading>
             <div className="request-header">
         <Img src={request.url_image}></Img>
         <Ul>
