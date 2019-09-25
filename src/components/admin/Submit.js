@@ -1,6 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from 'styled-components'
-import Axios from 'axios';
+import axios from 'axios';
+import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
 
 export default function RequestStory(props){
@@ -28,18 +29,47 @@ padding:1.3rem;
 margin-left:-5rem;
 
     `
-const [request,setRequest] = useState([])
+const [request,setRequest] = useState([]);
+const id = props.match.params.id;
 
-    Axios.get(
-        'https://refugee--stories.herokuapp.com/users/'
+const rejectStory = id => {
+    axiosWithAuth()
+    .delete('https://refugee--stories.herokuapp.com/stories/:id')
+    .then(res => {
+        console.log('DELETE', res);
+        props.history.push('/dashboard')
+    })
+    .catch(error => console.log(error.res))
+}
+
+const approveStory = id => {
+    axiosWithAuth()
+      .put('https://refugee--stories.herokuapp.com/stories/:id')
+      .then(res => {
+        console.log('APPROVE', res);
+        props.history.push("/dashboard")
+      })
+      .catch(error => console.log(error.response))
+  };
+
+
+  const getStory = () => {
+    axiosWithAuth()
+      .get(
+        'https://refugee--stories.herokuapp.com/stories/:id'
       )
-      .then(response => setRequest(response))
-      .catch(error => console.log(error))
+      .then(res => {
+        console.log('ADMIN REQUEST', res);
+        setRequest(res.data);
+      })
+      .catch(error => console.log(error.response));
+  };
 
+  useEffect(() => {
+    getStory();
+  }, []);
 
-
-    
-    return (
+  return (
         <div>
               
         <Heading>{request.title}</Heading>
@@ -53,8 +83,8 @@ const [request,setRequest] = useState([])
         <p>
             {request.body}
         </p>
-            <Accept>Approved</Accept>
-            <Decline>Decline</Decline>
+        <button onClick={() => approveStory(id)}>Approve</button>
+        <button onClick={() => rejectStory(id)}>Reject</button>
         </div>
     )
 }

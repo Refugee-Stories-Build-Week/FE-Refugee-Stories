@@ -6,7 +6,7 @@ const Dashboard = () => {
     return (
         <div className="dahsboard">
             <StoriesToReview />
-            <Submit />
+            
         </div>
     )
 }
