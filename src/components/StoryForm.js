@@ -5,59 +5,62 @@ import axios from "axios";
 import styled from 'styled-components';
 
 const Division = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
 
+const HeaderTitle = styled.h2`
+    margin: 10px auto;
+    color: #3C3C54;
 `;
 
 const Container = styled(Form)`
     display: flex;
-    flex-direction: row;
-`;
-
-const StoryContainer = styled.div`
-display: flex;
-flex-direction: column;
-width: 35%;
-
-
-`;
-
-const TextArea =styled(Field)`
-    width: 600px;
-	height: 120px;
-  border: 2px solid #5A5D80;
-  border-radius: 10px;
-	padding: 15px;
-	
-	
-  
-`;
-
-const InfoContainer = styled.div`
-display: flex;
-flex-wrap: wrap;
-width: 40%;
-height:20%;
-margin-top: 53px;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
 `;
 
 const Inputs = styled(Field)`
     border: 2px solid #5A5D80;
-    border-radius: 10px;
+    border-radius: 5px;
     color: #E04F56;
-    width: 40%;
+    width: 29%;
     height: 20px;
-    margin: 10px;
+    margin: 10px auto;
     padding: 10px;
+`;
+
+const StyledSelect = styled.select`
+    border: 2px solid #5A5D80;
+    color: #E04F56;
+    width: 29%;
+    height: 44px;
+    margin: 10px auto;
+    padding: 10px;
+`;
+
+const TextAreaContainer = styled.label`
+     margin: 10px auto;
+     width: 97%;
+`;
+
+const TextArea =styled(Field)`
+  border: 2px solid #5A5D80;
+  border-radius: 5px;
+  padding: 15px;
+  width: 96.5%;
+  height: 200px;
 `;
 
 const Button = styled.button`
     background: #E04F56;
-    width: 45%;
+    width: 25%;
     height: 40px;
-    margin: 10px;
+    margin: 0 auto;
     color: white; 
     border: 2px solid #5A5D80;
-    border-radius: 15px;
+    border-radius: 5px;
 
 `;
 
@@ -71,70 +74,56 @@ const StoryForm = ({ errors, touched, status }) => {
 
   return (
     <Division>
-
+      <HeaderTitle>Tell Us Your Story!</HeaderTitle>
       <Container>
-        <StoryContainer>
+          <Inputs type="text" name="author" placeholder="Author" />
+          {touched.author && errors.author && (<p className="error">{errors.author}</p>)}
+
           <Inputs type="text" name="title" placeholder="Title" />
           {touched.title && errors.title && (<p className="error">{errors.title}</p>)}
 
-          <label>    
-            <TextArea
-              component="textarea"
-              type="text"
-              name="story"
-              placeholder="Story"
-              style={{height: '250px', width: '400px'}}
-            />
-          </label>
-        </StoryContainer>
-
-        <InfoContainer>
-          <Inputs type="text" name="name" placeholder="Name" />
-          {touched.name && errors.name && (<p className="error">{errors.name}</p>)}
-
-          <Inputs type="text" name="email" placeholder="E-mail" />
-          {touched.email && errors.email && <p className="error">{errors.email}</p>}
-
-          <Inputs type="date" name="date" placeholder="Date" />
-          {touched.date && errors.date && <p className="error">{errors.date}</p>}
-
-          <Inputs component="select" className="country-select" name="country">
+          <StyledSelect component="select" name="country" >
             <option>Please Choose an Country</option>
             <option value="country1">Country1</option>
             <option value="country2">Country2</option>
             <option value="country3">Country3</option>
-          </Inputs>
-          <Button>Submit!</Button>
-        </InfoContainer>
+          </StyledSelect>
 
-
+          <TextAreaContainer>    
+            <TextArea
+              component="textarea"
+              type="text"
+              name="body"
+              placeholder="Story"
+            />
+          </TextAreaContainer>
       </Container>
-      {stories.map(story => (
-        <ul key={story.id}>
-          <li>Title:{story.title}</li>
-          <li>Name:{story.name}</li>
-          <li>E-mail: {story.email}</li>
-          <li>Date: {story.date}</li>
-          <li>Country: {story.country}</li>          
-          <li>Story: {story.story}</li>
+
+      <Button type="submit">Submit!</Button>
+        
+      {stories.map(props => (
+        <ul key={props.id}>
+          <li>Author:{props.author}</li>
+          <li>Title:{props.title}</li>
+          <li>Country: {props.country}</li>          
+          <li>Body: {props.body}</li>
+          
         </ul>
       ))}
     </Division>
   );
 };
 const FormikStoryForm = withFormik({
-  mapPropsToValues({ title, name, email, date, story }) {
+  mapPropsToValues({ author, title, body }) {
     return {
+      author: author || "",
       title: title || "",  
-      name: name || "",
-      email: email || "",
-      date: date || "",
-      story: story || ""
+      body: body || ""
     };
   },
   validationSchema: Yup.object().shape({
-    name: Yup.string().required("You must put a name"),
-    email: Yup.string().required()
+    author: Yup.string().required("You must put a name"),
+    title: Yup.string().required(),
   }),
   //You can use this to see the values
   handleSubmit(values, { setStatus }) {
