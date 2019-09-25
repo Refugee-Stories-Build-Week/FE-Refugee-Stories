@@ -18,12 +18,13 @@ import StoryContext from '../src/contexts/StoryContext';
 const App = () => (
   <div>
     <Navigation />
-    <StoryForm />
+    
     <Route exact path="/" component={Home} />
     <Route exact path="/about" component={About} />
     <Route exact path="/stories" component={Stories} />
     <PrivateRoute exact path="/dashboard" component={Dashboard} />
-    <Route exact path="/admin/submit" component={Submit} />
+    {/* <Route exact path="/admin/submit" component={Submit} /> */}
+    <Route path="/submit" component={StoryForm}/>
     <Route exact path="/login" component={Login} />
   </div>
 
