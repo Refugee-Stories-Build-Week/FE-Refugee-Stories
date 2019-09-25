@@ -99,7 +99,7 @@ const StoryForm = ({ errors, touched, status }) => {
           </TextAreaContainer>
       </Container>
 
-      <Button type="submit">Submit!</Button>
+      <Button onClick={() => alert('Hello')} type="submit">Submit!</Button>
         
       {stories.map(props => (
         <ul key={props.id}>
@@ -115,6 +115,7 @@ const StoryForm = ({ errors, touched, status }) => {
 };
 const FormikStoryForm = withFormik({
   mapPropsToValues({ author, title, body }) {
+    console.log(author, title, body)
     return {
       author: author || "",
       title: title || "",  
@@ -127,9 +128,14 @@ const FormikStoryForm = withFormik({
   }),
   //You can use this to see the values
   handleSubmit(values, { props, setStatus }) {
+    alert('hello')
     axios
       .post("https://refugee--stories.herokuapp.com/stories/submit", values)
       .then(res => {
+        alert(res)
+        localStorage.setItem('token', res.data.token);
+        props.history.push('/Dashboard');
+        
         setStatus(res.data);
       })
       .catch(err => console.log(err.res));

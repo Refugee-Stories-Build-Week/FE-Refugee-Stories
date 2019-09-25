@@ -1,4 +1,4 @@
-import React,{ useState } from "react"
+import React,{ useState, useEffect } from "react"
 import styled from 'styled-components'
 import axios from 'axios';
 
@@ -32,8 +32,11 @@ const getStory = () => {
     axios.get(
         `https://refugee--stories.herokuapp.com/stories/all${props.match.params.id}`
       )
-      .then(response => setStory(response))
-      .catch(error => console.log(error))
+      .then(response => {
+        console.log(response, 'response');
+        setStory(response.data)
+    })
+      .catch(error => console.log(error.response))
 }
 useEffect(() => {
     getStory();
@@ -41,7 +44,7 @@ useEffect(() => {
     return (
         <div>
               
-            <Heading>{story.title}</Heading>
+        <Heading>{story.title}</Heading>
             <div className="request-header">
         <Img src={story.url_img}></Img>
         <Ul>
