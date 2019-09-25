@@ -10,6 +10,7 @@ import PrivateRoute from './components/admin/PrivateRoute'
 import Submit  from './components/admin/Submit';
 import StoryForm from './components/StoryForm'
 import { About, Stories, Navigation, Login } from './components';
+import StoryPage from './components/StoryPage';
 
 //context
 import StoryContext from '../src/contexts/StoryContext';
@@ -23,9 +24,10 @@ const App = () => (
     <Route exact path="/about" component={About} />
     <Route exact path="/stories" component={Stories} />
     <PrivateRoute exact path="/dashboard" component={Dashboard} />
-    {/* <Route exact path="/admin/submit" component={Submit} /> */}
     <Route path="/submit" component={StoryForm}/>
     <Route exact path="/login" component={Login} />
+    <Route path="/story/:id" component={StoryPage} />
+    <Route exact path="/admin/submit" component={Submit} />
   </div>
 
 
