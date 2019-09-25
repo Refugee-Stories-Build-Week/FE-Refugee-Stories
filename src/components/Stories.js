@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 
 const Stories = ({ stories }) => {
-    console.log(stories);
+    // console.log(stories);
 
     return (
-        <div className="stories-container"> 
+      <div className="stories-container"> 
         <h2>All Stories</h2>
         <div className="stories-display">
         {stories.map(story => (
@@ -25,8 +25,7 @@ const Stories = ({ stories }) => {
         ))}
 
         </div>
-
-        </div>
+      </div>
     )
 }
 
