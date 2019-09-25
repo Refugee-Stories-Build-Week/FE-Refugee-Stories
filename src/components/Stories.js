@@ -7,7 +7,7 @@ const Stories = ({ stories }) => {
     return (
         <div className="stories-container"> 
         <h2>All Stories</h2>
-        <div>
+        <div className="stories-display">
         {stories.map(story => (
           <div className="list-of-stories-home" key={story.id}>
             <Link to={`/story/${story.id}`}>

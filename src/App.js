@@ -7,8 +7,8 @@ import Dashboard from './components/admin/Dashboard';
 import Home from './components/Home';
 import LoginForm from './components/Login';
 import PrivateRoute from './components/admin/PrivateRoute'
-import { Submit } from './components/admin/Submit';
-import { Home, About, Stories, Navigation, Login } from './components';
+import Submit  from './components/admin/Submit';
+import { About, Stories, Navigation, Login } from './components';
 
 //context
 import StoryContext from '../src/contexts/StoryContext';

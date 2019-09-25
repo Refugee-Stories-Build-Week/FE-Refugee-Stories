@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const StoryCard = (props) => {
+const Submit = (props) => {
     return (
         <div className="story-card">
         <h3>{props.title}</h3>
@@ -14,4 +14,4 @@ const StoryCard = (props) => {
     )
 }
 
-export default StoryCard;
+export default Submit;
