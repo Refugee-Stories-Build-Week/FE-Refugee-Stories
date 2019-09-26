@@ -8,9 +8,13 @@ import Home from './components/Home';
 import LoginForm from './components/Login';
 import PrivateRoute from './components/admin/PrivateRoute'
 import Submit  from './components/admin/Submit';
+
+
+import Footer from './components/Footer'
 import StoryForm from './components/StoryForm'
 import { About, Stories, Navigation, Login } from './components';
 import Footer from "./components/Footer";
+
 
 
 //context
@@ -28,7 +32,6 @@ const App = () => (
     {/* <Route exact path="/admin/submit" component={Submit} /> */}
     <Route path="/submit" component={StoryForm}/>
     <Route exact path="/login" component={Login} />
-
     <Footer />
   </div>
 

@@ -10,6 +10,7 @@ width:100%;
 bottom: 0;
 font-family: 'Raleway', sans-serif;
 display:inline-flex;
+position:absolute;
 
 `
 const FooterStart = styled.div`
@@ -20,7 +21,7 @@ font-size:12px;
 
 const Paragraph = styled.p`
 
-margin-left:27%;
+margin-left:15%;
 color:#FFEEDB;
 `
 const Ul = styled.ul`
@@ -29,14 +30,19 @@ display:inline-flex;
 const Li =styled.li`
 list-style:none;
 margin-left:1rem;
+
 `
 
     return(
 <Footer>
     <FooterStart>
         <Ul>
-<Li><NavLink className="white" to="/requestStory">Request Story </NavLink></Li>
-<Li><NavLink className="white" to="/story">Story</NavLink> </Li>
+<Li><NavLink className="white" to="/">Home</NavLink></Li>
+<Li><NavLink className="white" to="/about">About</NavLink> </Li>
+<Li><NavLink className="white" to="/stories">Stories</NavLink></Li>
+<Li><NavLink className="white" to="/submit">Submit Your Story</NavLink> </Li>
+<Li><NavLink className="white" to="/login">Admin Login</NavLink> </Li>
+
 </Ul>
 </FooterStart>
 <Paragraph>
