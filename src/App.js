@@ -13,6 +13,8 @@ import Submit  from './components/admin/Submit';
 import Footer from './components/Footer'
 import StoryForm from './components/StoryForm'
 import { About, Stories, Navigation, Login } from './components';
+import Footer from "./components/Footer";
+
 
 
 //context

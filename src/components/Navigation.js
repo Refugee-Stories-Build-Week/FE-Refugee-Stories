@@ -1,7 +1,8 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import styled from 'styled-components';
 import logo from '../design/logo.png';
+import { NavHashLink as NavLink } from 'react-router-hash-link';
 
 const Nav = styled.nav`
     display: flex;
@@ -20,9 +21,16 @@ const NavigationLinks = styled.div`
 
 
 const StyledNavLink = styled(NavLink)`
-    color: white;
+    color: #FFEEDB;
     margin:  20px;
     text-decoration: none;
+
+    &:hover {
+      color: #E04F56;
+    }
+    &:focus {
+      color: #ADA8B6;
+    }
 
 `;
 
