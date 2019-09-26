@@ -20,12 +20,6 @@ const StoryPage = ({props}) => {
 margin-left:-5rem;
 
     `
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 311d3635288c35f2499fe8e8453f9b91f222d35a
 const [story,setStory] = useState({})
 const getStory = () => {
     axiosWithAuth()
@@ -45,10 +39,7 @@ useEffect(() => {
         <div>
               
         <Heading>{story.title}</Heading>
-<<<<<<< HEAD
->>>>>>> 311d3635288c35f2499fe8e8453f9b91f222d35a
-=======
->>>>>>> 311d3635288c35f2499fe8e8453f9b91f222d35a
+
             <div className="request-header">
         <Img src={props}></Img>
         <Ul>
