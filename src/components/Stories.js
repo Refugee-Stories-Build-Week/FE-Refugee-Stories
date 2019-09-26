@@ -3,14 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'
 
 
-
-
-
-
 const Stories = ({stories}) => {
-    console.log(stories);
-   
-
+    // console.log(stories);
     return (
       <div className="stories-container">
       <h1 className="h1">All Refugee Stories</h1>
