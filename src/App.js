@@ -27,13 +27,13 @@ const App = () => (
     
     <Route exact path="/" component={Home} />
     <Route exact path="/about" component={About} />
-    {/* <Route exact path="/stories" component={Stories} /> */}
+    <Route exact path="/stories" component={Stories} />
     
     <Route path="/submit" component={StoryForm}/>
     <Route exact path="/login" component={Login} />
     <PrivateRoute exact path="/dashboard" component={Dashboard} />
-    <Route path="/dashboard/story/:id" component={Submit} />
-    <Route exact path="/story/:id" component={StoryPage} /> 
+    <Route path="/dashboard/story/:id" component={StoryPage} />
+    <Route path="/story/:id" component={Submit} /> 
     <Footer />
   </div>
 
