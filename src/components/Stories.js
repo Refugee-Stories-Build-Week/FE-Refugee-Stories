@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import StoryCard from './admin/StoryToReview';
+import axios from 'axios'
+
+
 
 
 
@@ -29,3 +31,4 @@ const Stories = ({stories}) => {
 }
 
 export default Stories;
+

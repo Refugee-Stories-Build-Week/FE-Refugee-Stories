@@ -10,7 +10,6 @@ const Home = () => {
     const [storyList, setStoryList] = useState([]);
 
     const getStories = () => {
-        // axiosWithAuth()
         axios
         //endpoint below shows approved stories
         .get('https://refugee--stories.herokuapp.com/stories/')
@@ -28,8 +27,6 @@ const Home = () => {
 
     return(
         <div className="home-container">
-        {/* will move stories component after testing */}
-        <Stories key={storyList.id} stories={storyList}/>
         {/* <Carousel key={storyList.id} stories={storyList}/> */}
         <StoryForm />
         </div>
