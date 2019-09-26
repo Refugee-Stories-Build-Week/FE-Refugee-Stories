@@ -9,7 +9,6 @@ import PrivateRoute from './components/admin/PrivateRoute'
 import Submit  from './components/admin/Submit';
 
 
-import Footer from './components/Footer'
 import StoryForm from './components/StoryForm'
 import { About, Stories, Navigation, Login } from './components';
 import StoryPage from './components/StoryPage';
@@ -34,6 +33,7 @@ const App = () => (
     <PrivateRoute exact path="/dashboard" component={Dashboard} />
     <Route path="/dashboard/story/:id" component={StoryPage} />
     <Route path="/story/:id" component={Submit} /> 
+    
     <Footer />
   </div>
 
