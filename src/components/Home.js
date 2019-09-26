@@ -26,6 +26,7 @@ const Home = () => {
     
 
     return(
+
         <div className="home-container">
         {/* <Carousel key={storyList.id} stories={storyList}/> */}
         <StoryForm />

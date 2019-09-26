@@ -12,13 +12,18 @@ import StoriesGrid from './components/StoriesGrid'
 
 import StoryForm from './components/StoryForm'
 import { About, Stories, Navigation, Login } from './components';
+
 import StoryPage from './components/StoryPage';
-import Footer from './components/Footer';
+import Footer from './components/Footer'
+
+
 
 
 
 //context
 import StoryContext from '../src/contexts/StoryContext';
+import StoriesToReview from './components/admin/StoriesToReview';
+import StoryPage from './components/StoryPage';
 
 
 const App = () => (
