@@ -1,6 +1,6 @@
-import React,{ useState,useEffect } from "react"
+import React,{ useState, useEffect } from "react"
 import styled from 'styled-components'
-import axios from 'axios';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 const StoryPage = ({props}) => {
     const Heading = styled.h2`
@@ -15,27 +15,34 @@ const StoryPage = ({props}) => {
     list-style:none;
     
     `
-    const Accept = styled.button`
-padding:1.3rem;
-margin-left:25rem;
-    `
-    const Decline = styled.button`
-padding:1.3rem;
-
-    `
+   
     const Img = styled.img`
 margin-left:-5rem;
 
     `
 
 
-  
-console.log(props)
 
+const [story,setStory] = useState({})
+const getStory = () => {
+    axiosWithAuth()
+    .get(
+        `https://refugee--stories.herokuapp.com/stories/all/${props.match.params.id}`
+      )
+      .then(response => {
+        console.log(response, 'response');
+        setStory(response.data)
+    })
+      .catch(error => console.log(error.response))
+}
+useEffect(() => {
+    getStory();
+}, [])
     return (
         <div>
               
-            <Heading>{props}</Heading>
+        <Heading>{story.title}</Heading>
+>>>>>>> 311d3635288c35f2499fe8e8453f9b91f222d35a
             <div className="request-header">
         <Img src={props}></Img>
         <Ul>

@@ -5,23 +5,28 @@ import styled from 'styled-components'
 
 export default function Footer(){
 const Footer = styled.footer`
-background-color:#3C3C54;
-width:100%;
-bottom: 0;
-font-family: 'Raleway', sans-serif;
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
 display:inline-flex;
-position:absolute;
-
+font-family: 'Raleway', sans-serif;
+background-color:#3C3C54;
 `
 const FooterStart = styled.div`
 justify-content:right;
 font-size:12px;
+position: absolute;
+    left: 0;
+    bottom: 0;
+    right:0;
 
 `
 
 const Paragraph = styled.p`
 
-margin-left:15%;
+margin-left:80%;
 color:#FFEEDB;
 `
 const Ul = styled.ul`
