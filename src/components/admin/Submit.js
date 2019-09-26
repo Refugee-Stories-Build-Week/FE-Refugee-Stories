@@ -21,6 +21,10 @@ export default function RequestStory(props){
 margin-left:-5rem;
 
     `
+// const [approve, setApprove] = useState({
+//   approved: false
+// });
+
 const [story,setStory] = useState({});
 const id = props.match.params.id;
 
@@ -34,21 +38,22 @@ const rejectStory = id => {
     .catch(error => console.log(error.res))
 }
 
-const approveStory = id => {
+const approveStory = (id, data) => {
     axiosWithAuth()
-      .put(`https://refugee--stories.herokuapp.com/stories/${id}`)
+      .put(`https://refugee--stories.herokuapp.com/stories/${id}`,{approved:true})
       .then(res => {
         console.log('APPROVE', res);
         props.history.push("/dashboard")
       })
       .catch(error => console.log(error.response))
+    console.log(id, data)
   };
 
 
   const getStory = () => {
     axiosWithAuth()
       .get(
-        `https://refugee--stories.herokuapp.com/stories/${id}`
+        `https://refugee--stories.herokuapp.com/stories/all/${id}`
       )
       .then(res => {
         console.log('ADMIN REQUEST', res);

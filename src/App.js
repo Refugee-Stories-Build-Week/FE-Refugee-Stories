@@ -12,7 +12,8 @@ import Submit  from './components/admin/Submit';
 import StoryForm from './components/StoryForm'
 import { About, Stories, Navigation, Login } from './components';
 
-import Footer from "./components/Footer"
+import StoryPage from './components/StoryPage';
+import Footer from './components/Footer'
 
 
 
