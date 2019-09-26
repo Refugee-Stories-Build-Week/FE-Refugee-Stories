@@ -12,13 +12,17 @@ import Submit  from './components/admin/Submit';
 
 import Footer from './components/Footer'
 import StoryForm from './components/StoryForm'
-import { About, Stories, Navigation, Login } from './components';
+import { About, Stories, Navigation, Login, } from './components';
+import Story from "./Story"
+
 
 
 
 
 //context
 import StoryContext from '../src/contexts/StoryContext';
+import StoriesToReview from './components/admin/StoriesToReview';
+import StoryPage from './components/StoryPage';
 
 
 const App = () => (
@@ -32,6 +36,9 @@ const App = () => (
     {/* <Route exact path="/admin/submit" component={Submit} /> */}
     <Route path="/submit" component={StoryForm}/>
     <Route exact path="/login" component={Login} />
+    <Route path="/story" component={Story} />
+    <Route path="/StoryPage" component={StoryPage} />
+    <Story />
     <Footer />
   </div>
 

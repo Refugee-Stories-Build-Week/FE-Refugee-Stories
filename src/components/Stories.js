@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import { axiosWithAuth } from '../../src/utils/axiosWithAuth'
 
 
 
-const Stories = ({ stories }) => {
-    // console.log(stories);
+const Stories = (props) => {
+  
+
+    
 
     return (
       <div className="stories-container"> 
         <h2>All Stories</h2>
         <div className="stories-display">
-        {stories.map(story => (
+        {props.stories.map(story => (
           <div className="list-of-stories-home" key={story.id}>
             <Link to={`/story/${story.id}`}>
               <h3 className="story-title">{story.title}</h3>

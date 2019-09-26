@@ -20,8 +20,9 @@ const Home = () => {
     useEffect(() => {
         getStories();
     }, [])
-
+console.log(storyList)
     return(
+
         <div className="home-container">
         <Stories stories={storyList}/>
         {/* <Carousel /> */}

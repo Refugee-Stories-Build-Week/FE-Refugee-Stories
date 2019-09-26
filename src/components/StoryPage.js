@@ -1,8 +1,8 @@
-import React,{ useState } from "react"
+import React,{ useState,useEffect } from "react"
 import styled from 'styled-components'
 import axios from 'axios';
 
-export default function StoryPage (props){
+const StoryPage = ({props}) => {
     const Heading = styled.h2`
     text-align:center;
     margin-bottom:3rem;
@@ -27,35 +27,30 @@ padding:1.3rem;
 margin-left:-5rem;
 
     `
-const [story,setStory] = useState([])
-const getStory = () => {
-    axios.get(
-        `https://refugee--stories.herokuapp.com/stories/all${props.match.params.id}`
-      )
-      .then(response => setStory(response))
-      .catch(error => console.log(error))
-}
-useEffect(() => {
-    getStory();
-}, [])
+
+
+  
+console.log(props)
+
     return (
         <div>
               
-            <Heading>{story.title}</Heading>
+            <Heading>{props}</Heading>
             <div className="request-header">
-        <Img src={story.url_img}></Img>
+        <Img src={props}></Img>
         <Ul>
-            <Li>Name :{story.author}</Li>
-            <Li>Location :{story.country}</Li>
+            <Li>Name :{props}</Li>
+            <Li>Location :{props}</Li>
             <Li>Time :{}</Li>
             <Li>Lorem Ipsem:{}</Li>
             
         </Ul>
         </div>
         <p>
-        {story.body}
+        {props}
         </p>
            
         </div>
     )
 }
+export default StoryPage
