@@ -5,13 +5,14 @@ import styled from 'styled-components'
 
 export default function Footer(){
 const Footer = styled.footer`
-background-color:#3C3C54;
-width:100%;
-bottom: 0;
-font-family: 'Raleway', sans-serif;
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
 display:inline-flex;
-position: relative
-
+font-family: 'Raleway', sans-serif;
+background-color:#3C3C54;
 `
 const FooterStart = styled.div`
 justify-content:right;

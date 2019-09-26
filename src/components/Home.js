@@ -26,6 +26,7 @@ const Home = () => {
     
 
     return(
+
         <div className="home-container">
         <Stories key={storyList.id} stories={storyList}/>
         {/* <Carousel key={storyList.id} stories={storyList}/> */}
