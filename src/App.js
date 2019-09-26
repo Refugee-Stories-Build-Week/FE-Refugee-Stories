@@ -11,8 +11,12 @@ import Submit  from './components/admin/Submit';
 
 import StoryForm from './components/StoryForm'
 import { About, Stories, Navigation, Login } from './components';
+<<<<<<< HEAD
 
 import Footer from "./components/Footer"
+=======
+import StoryPage from './components/StoryPage';
+>>>>>>> 311d3635288c35f2499fe8e8453f9b91f222d35a
 
 
 
