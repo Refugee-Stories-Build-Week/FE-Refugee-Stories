@@ -27,14 +27,17 @@ padding:1.3rem;
 margin-left:-5rem;
 
     `
-    const [story,setStory] = useState([])
-
+const [story,setStory] = useState([])
+const getStory = () => {
     axios.get(
-        'https://refugee--stories.herokuapp.com/users/'
+        `https://refugee--stories.herokuapp.com/stories/all${props.match.params.id}`
       )
       .then(response => setStory(response))
       .catch(error => console.log(error))
-
+}
+useEffect(() => {
+    getStory();
+}, [])
     return (
         <div>
               
