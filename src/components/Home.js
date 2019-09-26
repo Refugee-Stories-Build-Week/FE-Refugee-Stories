@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Stories from '../components/Stories';
 import StoryForm from "./StoryForm";
 import axios from 'axios';
+import Carousel from './Carousel';
 
 
 const Home = () => {
@@ -26,8 +27,8 @@ const Home = () => {
 
     return(
         <div className="home-container">
-        <Stories stories={storyList}/>
-        {/* <Carousel /> */}
+        <Stories key={storyList.id} stories={storyList}/>
+        {/* <Carousel key={storyList.id} stories={storyList}/> */}
         <StoryForm />
         </div>
     )

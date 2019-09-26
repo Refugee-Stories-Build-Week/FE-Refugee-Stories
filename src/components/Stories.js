@@ -9,10 +9,10 @@ const Stories = ({ stories }) => {
     return (
       <div className="stories-container"> 
         <h2>All Stories</h2>
-        <div className="stories-display">
-    {/* {stories.map(story => (
+        {/* <div className="stories-display">
+    {stories.map(story => (
       <div className="list-of-stories-home" key={story.id}>
-        <Link to={`/story/${story.id}`}>
+        <Link to={`dashboard/story/${story.id}`}>
           <h3 className="story-title">{story.title}</h3>
         </Link>
         <Link to={`/story/${story.id}`}>
@@ -23,8 +23,8 @@ const Stories = ({ stories }) => {
           <p>{story.created_at}</p>
       </div>
     ))
-    } */}
-        </div>
+    }
+        </div> */}
        
       </div>
     )
