@@ -17,24 +17,16 @@ export default function RequestStory(props){
     list-style:none;
     
     `
-    const Accept = styled.button`
-padding:1.3rem;
-margin-left:27rem;
-    `
-    const Decline = styled.button`
-padding:1.3rem;
-
-    `
     const Img = styled.img`
 margin-left:-5rem;
 
     `
-const [request,setRequest] = useState([]);
+const [story,setStory] = useState({});
 const id = props.match.params.id;
 
 const rejectStory = id => {
     axiosWithAuth()
-    .delete('https://refugee--stories.herokuapp.com/stories/:id')
+    .delete(`https://refugee--stories.herokuapp.com/stories/${id}`)
     .then(res => {
         console.log('DELETE', res);
         props.history.push('/dashboard')
@@ -44,7 +36,7 @@ const rejectStory = id => {
 
 const approveStory = id => {
     axiosWithAuth()
-      .put('https://refugee--stories.herokuapp.com/stories/:id')
+      .put(`https://refugee--stories.herokuapp.com/stories/${id}`)
       .then(res => {
         console.log('APPROVE', res);
         props.history.push("/dashboard")
@@ -56,11 +48,11 @@ const approveStory = id => {
   const getStory = () => {
     axiosWithAuth()
       .get(
-        'https://refugee--stories.herokuapp.com/stories/:id'
+        `https://refugee--stories.herokuapp.com/stories/${id}`
       )
       .then(res => {
         console.log('ADMIN REQUEST', res);
-        setRequest(res.data);
+        setStory(res.data);
       })
       .catch(error => console.log(error.response));
   };
@@ -72,16 +64,16 @@ const approveStory = id => {
   return (
         <div>
               
-        <Heading>{request.title}</Heading>
+        <Heading>{story.title}</Heading>
             <div className="request-header">
-        <Img src={request.url_image}></Img>
+        <Img src={story.url_image}></Img>
         <Ul>
-            <Li>By :{request.author}</Li>
-            <Li>Location : {request.country}</Li>    
+            <Li>By :{story.author}</Li>
+            <Li>Location : {story.country}</Li>    
         </Ul>
         </div>
         <p>
-            {request.body}
+            {story.body}
         </p>
         <button onClick={() => approveStory(id)}>Approve</button>
         <button onClick={() => rejectStory(id)}>Reject</button>

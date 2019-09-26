@@ -7,9 +7,10 @@ const StoryCard = (props) => {
             <h3>{props.title}</h3>
             <img src={props.url_img}/>
             <Link to={`dashboard/story/${props.id}`}>
-                <button>Review Story</button>
-            
+                
+            <button>Review Story</button>
             </Link>
+            
         </div>
     )
 }

@@ -9,9 +9,9 @@ const StoriesToReview = () => {
         axiosWithAuth()
         .get('https://refugee--stories.herokuapp.com/stories/all')
         .then(res => {
-            console.log(res.data);
+            console.log("story", res.data);
             const unapprovedStories = res.data.filter(story => {
-            if (story.approved === false) return story;
+            if (story.approved === 0) return story;
             });
             setStories(unapprovedStories);
         })
