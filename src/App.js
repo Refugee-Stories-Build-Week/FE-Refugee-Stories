@@ -30,10 +30,11 @@ const App = () => (
     
     <Route path="/submit" component={StoryForm}/>
     <Route exact path="/login" component={Login} />
+
     <PrivateRoute exact path="/dashboard" component={Dashboard} />
     <Route path="/dashboard/story/:id" component={StoryPage} />
     <Route path="/story/:id" component={Submit} /> 
-    
+
     <Footer />
   </div>
 
