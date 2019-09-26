@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Stories = ( stories ) => {
-    console.log(stories);
+
+
+const Stories = ({ stories }) => {
+    // console.log(stories);
 
     return (
       <div className="stories-container"> 

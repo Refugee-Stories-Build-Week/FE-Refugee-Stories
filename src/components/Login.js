@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import styled from "styled-components";
 
-
+const Header = styled.h1`
+    color: #FFEEDB;
+    margin-left: 30px;
+`;
 const StyledForm = styled(Form)`
     display: flex;
     flex-direction: column;
@@ -17,14 +20,29 @@ const StyledForm = styled(Form)`
 `;
 
 const StyledField = styled(Field)`
-    margin: 10px 0;
-    height: 30px;
+border: 2px solid #5A5D80;
+border-radius: 5px;
+color: #E04F56;
+width: 80%;
+height: 20px;
+margin: 10px auto;
+padding: 10px;
+
 `;
 
 const Btn = styled.button`
     background: #E04F56;
+    color: #FFEEDB;
+    font-size: 0.8rem;
+    width: 60%;
     height: 30px;
-    border-radius: 12px;
+    border-radius: 5px;
+    margin: 10px auto;
+
+    &:hover {
+      background: #5A5D80;
+      border: 2px solid #E04F56;
+    }
 `;
 
 const LoginForm = ({ errors, touched }) => {
@@ -33,7 +51,7 @@ const LoginForm = ({ errors, touched }) => {
   return (
    
       <StyledForm>
-         <h1>Admin Login</h1> 
+         <Header>Admin Login</Header> 
         <StyledField type="text" name="username" placeholder="Username" />
         {touched.username && errors.username && (
           <p className="error">{errors.username}</p>)}
