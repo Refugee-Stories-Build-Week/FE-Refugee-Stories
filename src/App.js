@@ -7,6 +7,7 @@ import Dashboard from './components/admin/Dashboard';
 import Home from './components/Home';
 import PrivateRoute from './components/admin/PrivateRoute'
 import Submit  from './components/admin/Submit';
+import StoriesGrid from './components/StoriesGrid'
 
 
 import StoryForm from './components/StoryForm'
@@ -31,7 +32,7 @@ const App = () => (
     
     <Route exact path="/" component={Home} />
     <Route exact path="/about" component={About} />
-    <Route exact path="/stories" component={Stories} />
+    <Route exact path="/stories" component={StoriesGrid} />
     
     <Route path="/submit" component={StoryForm}/>
     <Route exact path="/login" component={Login} />

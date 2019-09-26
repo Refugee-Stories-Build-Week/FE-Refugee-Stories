@@ -10,8 +10,8 @@ const Home = () => {
     const [storyList, setStoryList] = useState([]);
 
     const getStories = () => {
-        // axiosWithAuth()
         axios
+        //endpoint below shows approved stories
         .get('https://refugee--stories.herokuapp.com/stories/')
         .then(res => {
             console.log(res.data);
@@ -28,7 +28,6 @@ const Home = () => {
     return(
 
         <div className="home-container">
-        <Stories key={storyList.id} stories={storyList}/>
         {/* <Carousel key={storyList.id} stories={storyList}/> */}
         <StoryForm />
         </div>
