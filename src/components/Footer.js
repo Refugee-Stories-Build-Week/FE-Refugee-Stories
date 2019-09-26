@@ -10,18 +10,22 @@ width:100%;
 bottom: 0;
 font-family: 'Raleway', sans-serif;
 display:inline-flex;
-position:absolute;
+position: relative
 
 `
 const FooterStart = styled.div`
 justify-content:right;
 font-size:12px;
+position: absolute;
+    left: 0;
+    bottom: 0;
+    right:0;
 
 `
 
 const Paragraph = styled.p`
 
-margin-left:15%;
+margin-left:80%;
 color:#FFEEDB;
 `
 const Ul = styled.ul`
