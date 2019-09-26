@@ -1,6 +1,6 @@
 import React,{ useState, useEffect } from "react"
 import styled from 'styled-components'
-import axios from 'axios';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 export default function StoryPage (props){
     const Heading = styled.h2`
@@ -15,22 +15,16 @@ export default function StoryPage (props){
     list-style:none;
     
     `
-    const Accept = styled.button`
-padding:1.3rem;
-margin-left:25rem;
-    `
-    const Decline = styled.button`
-padding:1.3rem;
-
-    `
+   
     const Img = styled.img`
 margin-left:-5rem;
 
     `
-const [story,setStory] = useState([])
+const [story,setStory] = useState({})
 const getStory = () => {
-    axios.get(
-        `https://refugee--stories.herokuapp.com/stories/all${props.match.params.id}`
+    axiosWithAuth()
+    .get(
+        `https://refugee--stories.herokuapp.com/stories/all/${props.match.params.id}`
       )
       .then(response => {
         console.log(response, 'response');

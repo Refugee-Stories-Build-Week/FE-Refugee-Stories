@@ -128,14 +128,12 @@ const FormikStoryForm = withFormik({
   }),
   //You can use this to see the values
   handleSubmit(values, { props, setStatus }) {
-    alert('hello')
+    console.log(values)
     axios
       .post("https://refugee--stories.herokuapp.com/stories/submit", values)
       .then(res => {
         alert(res)
-        localStorage.setItem('token', res.data.token);
         props.history.push('/Dashboard');
-        
         setStatus(res.data);
       })
       .catch(err => console.log(err.res));

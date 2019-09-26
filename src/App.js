@@ -5,7 +5,6 @@ import './App.css';
 //components
 import Dashboard from './components/admin/Dashboard';
 import Home from './components/Home';
-import LoginForm from './components/Login';
 import PrivateRoute from './components/admin/PrivateRoute'
 import Submit  from './components/admin/Submit';
 import StoryForm from './components/StoryForm'
@@ -22,11 +21,12 @@ const App = () => (
     
     <Route exact path="/" component={Home} />
     <Route exact path="/about" component={About} />
-    <Route exact path="/stories" component={Stories} />
-    <PrivateRoute exact path="/dashboard" component={Dashboard} />
+    {/* <Route exact path="/stories" component={Stories} /> */}
+    
     <Route path="/submit" component={StoryForm}/>
     <Route exact path="/login" component={Login} />
-    <Route path="/story/:id" component={StoryPage} />
+    <PrivateRoute exact path="/dashboard" component={Dashboard} />
+    <Route path="/dashboard/story/:id" component={StoryPage} />
     <Route exact path="/admin/submit" component={Submit} />
   </div>
 

@@ -19,6 +19,7 @@ const Home = () => {
     useEffect(() => {
         getStories();
     }, [])
+    
 
     return(
         <div className="home-container">
