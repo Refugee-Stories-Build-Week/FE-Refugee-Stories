@@ -1,8 +1,8 @@
 import React,{ useState, useEffect } from "react"
 import styled from 'styled-components'
-import { axiosWithAuth } from '../utils/axiosWithAuth';
-
-const StoryPage = ({props}) => {
+// import axios from 'axios';
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+const StoryPage = (props) => {
     const Heading = styled.h2`
     text-align:center;
     margin-bottom:3rem;
@@ -18,7 +18,6 @@ const StoryPage = ({props}) => {
    
     const Img = styled.img`
 margin-left:-5rem;
-
     `
 const [story,setStory] = useState({})
 const getStory = () => {
@@ -39,22 +38,31 @@ useEffect(() => {
         <div>
               
         <Heading>{story.title}</Heading>
-
             <div className="request-header">
-        <Img src={props}></Img>
+        <Img src={story.url_img}></Img>
         <Ul>
-            <Li>Name :{props}</Li>
-            <Li>Location :{props}</Li>
-            <Li>Time :{}</Li>
-            <Li>Lorem Ipsem:{}</Li>
+            
+            <Li>{story.title}</Li>
+            <Li>{story.created_at}</Li>
+            
             
         </Ul>
         </div>
         <p>
-        {props}
+        {story.body}
         </p>
            
         </div>
     )
 }
-export default StoryPage
+export default StoryPage;
+
+
+
+
+
+
+
+
+
+

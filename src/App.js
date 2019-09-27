@@ -23,7 +23,7 @@ import Footer from './components/Footer'
 //context
 import StoryContext from '../src/contexts/StoryContext';
 import StoriesToReview from './components/admin/StoriesToReview';
-import StoryPage from './components/StoryPage';
+
 
 
 const App = () => (
@@ -38,8 +38,8 @@ const App = () => (
     <Route exact path="/login" component={Login} />
 
     <PrivateRoute exact path="/dashboard" component={Dashboard} />
-    <Route path="/dashboard/story/:id" component={StoryPage} />
-    <Route path="/story/:id" component={Submit} /> 
+    <Route path="/dashboard/stories/:id" component={StoryPage} />
+    <Route exact path="/story/:id" component={Submit} /> 
 
     <Footer />
   </div>

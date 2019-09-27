@@ -12,10 +12,10 @@ const Stories = ({stories}) => {
       <div className="stories-display">
         {stories.map(story => (
           <div className="list-of-stories-home" key={story.id}>
-            <Link to={`/story/${story.id}`}>
+            <Link to={`/stories/${story.id}`}>
               <h3 className="story-title">{story.title}</h3>
             </Link>
-            <Link to={`/story/${story.id}`}>
+            <Link to={`/stories/${story.id}`}>
               <img src={story.url_img} className="story-image" alt="author" />
             </Link>
           </div>
@@ -23,7 +23,6 @@ const Stories = ({stories}) => {
       </div>
     </div>
   );
-
+}
 
 export default Stories;
-

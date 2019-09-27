@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Stories from './Stories';
 import {axiosWithAuth} from '../utils/axiosWithAuth'
+import axios from 'axios'
 
 const StoriesGrid = () => {
     const [storiesList, setStoriesList] = useState([]);
   
     const getStories = () => {
         axiosWithAuth()
-        // axios
-        .get('https://refugee--stories.herokuapp.com/stories/all')
+    //    axios
+        .get('https://refugee--stories.herokuapp.com/stories/')
         .then(res => {
             console.log(res.data);
             setStoriesList(res.data);

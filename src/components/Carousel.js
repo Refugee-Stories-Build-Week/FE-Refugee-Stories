@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 // export default class SimpleSlider extends Component {
 const Carousel = ({ stories }) => {
-  console.log(stories);
+//   console.log(stories);
   console.log(stories[stories.length - 1], 'last story');
   //   render() {
   const settings = {
@@ -54,19 +54,19 @@ const Carousel = ({ stories }) => {
       <h2 className="car-headline"> Most Recent </h2>
       <Slider {...settings}>
         <div className="car-card-container">
-          <h2 className="story-title">{stories[stories.length - 1].title} </h2>
-          <Link to={`/story/${stories[stories.length - 1].id}`}>
+          <h2 className="story-title">{[stories.length - 1].title}</h2>
+          <Link to={`/stories/${[stories.length - 1]}`}>
             <img
               className="carousel-image"
               alt="author"
-              src={stories[stories.length - 1].imageUrl}
+              src={[stories.length - 1].url_img}
             />
           </Link>
-          <Link to={`/story/${stories[stories.length - 1].id}`}>
+          <Link to={`/stories/${[stories.length - 1]}`}>
             <button className="submit-button"> Read More </button>
           </Link>
         </div>
-        <div Classname="car-card-container">
+        {/* <div Classname="car-card-container">
           <h2 className="story-title">{stories[stories.length - 2].title} </h2>
           <Link to={`/story/${stories[stories.length - 2].id}`}>
             <img
@@ -117,7 +117,7 @@ const Carousel = ({ stories }) => {
           <Link to={`/story/${stories[stories.length - 5].id}`}>
             <button className="carousel-button"> Read More </button>
           </Link>
-        </div>
+        </div> */}
       </Slider>
     </div>
   );
