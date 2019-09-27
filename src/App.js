@@ -31,15 +31,15 @@ const App = () => (
     <Navigation />
     
     <Route exact path="/" component={Home} />
-    <Route exact path="/about" component={About} />
+    {/* <Route exact path="/about" component={About} /> */}
     <Route exact path="/stories" component={StoriesGrid} />
     
     <Route path="/submit" component={StoryForm}/>
     <Route exact path="/login" component={Login} />
 
     <PrivateRoute exact path="/dashboard" component={Dashboard} />
-    <Route path="/dashboard/stories/:id" component={StoryPage} />
-    <Route exact path="/story/:id" component={Submit} /> 
+    <Route exact path="/dashboard/story/:id" component={StoryPage} />
+    <Route path="/story/:id" component={Submit} /> 
 
     <Footer />
   </div>

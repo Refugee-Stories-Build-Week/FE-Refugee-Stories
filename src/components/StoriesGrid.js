@@ -8,7 +8,7 @@ const StoriesGrid = () => {
   
     const getStories = () => {
         axiosWithAuth()
-    //    axios
+        // axios
         .get('https://refugee--stories.herokuapp.com/stories/')
         .then(res => {
             console.log(res.data);

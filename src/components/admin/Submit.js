@@ -21,9 +21,6 @@ export default function RequestStory(props){
 margin-left:-5rem;
 
     `
-// const [approve, setApprove] = useState({
-//   approved: false
-// });
 
 const [story,setStory] = useState({});
 const id = props.match.params.id;
