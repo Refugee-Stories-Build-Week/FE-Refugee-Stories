@@ -40,7 +40,7 @@ const App = () => (
     <PrivateRoute exact path="/dashboard" component={Dashboard} />
     <Route exact path="/dashboard/story/:id" component={StoryPage} />
     <Route path="/story/:id" component={Submit} /> 
-
+    <Route path="/StoryPage" component={StoryPage} />
     <Footer />
   </div>
 

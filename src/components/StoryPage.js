@@ -55,14 +55,6 @@ useEffect(() => {
         </div>
     )
 }
+
 export default StoryPage;
-
-
-
-
-
-
-
-
-
 
