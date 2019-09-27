@@ -2,7 +2,6 @@ import React,{ useState, useEffect } from "react"
 import styled from 'styled-components'
 // import axios from 'axios';
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-
 const StoryPage = (props) => {
     const Heading = styled.h2`
     text-align:center;
@@ -39,7 +38,6 @@ useEffect(() => {
         <div>
               
         <Heading>{story.title}</Heading>
-
             <div className="request-header">
         <Img src={story.url_img}></Img>
         <Ul>
@@ -57,4 +55,6 @@ useEffect(() => {
         </div>
     )
 }
-export default StoryPage
+
+export default StoryPage;
+

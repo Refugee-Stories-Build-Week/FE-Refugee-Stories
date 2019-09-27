@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 // import { axiosWithAuth } from '../utils/axiosWithAuth';
-import Stories from '../components/Stories';
 import StoryForm from "./StoryForm";
 import axios from 'axios';
 import Carousel from './Carousel';
@@ -28,7 +27,7 @@ const Home = () => {
     return(
 
         <div className="home-container">
-        {/* <Carousel key={storyList.id} stories={storyList}/> */}
+        <Carousel key={storyList.id} stories={storyList}/>
         <StoryForm />
         </div>
     )

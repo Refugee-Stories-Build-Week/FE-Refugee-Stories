@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Stories from './Stories';
 import {axiosWithAuth} from '../utils/axiosWithAuth'
+import axios from 'axios'
 
 const StoriesGrid = () => {
     const [storiesList, setStoriesList] = useState([]);
