@@ -20,9 +20,9 @@ export default function RequestStory(props){
   `
  
   const Img = styled.img`
-margin-left:15rem;
-
-  `
+  height:500px
+  width:700px;
+      `
   const Request =styled.div`
 display:inline-flex;
   `

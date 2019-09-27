@@ -24,9 +24,9 @@ const StoryPage = (props) => {
       `
    
     const Img = styled.img`
-margin-left:-5rem;
 height:500px
 width:700px;
+margin-bottom:1rem;
     `
 const [story,setStory] = useState({})
 const getStory = () => {
