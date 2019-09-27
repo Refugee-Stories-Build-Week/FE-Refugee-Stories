@@ -8,7 +8,7 @@ const StoriesGrid = () => {
     const getStories = () => {
         axiosWithAuth()
         // axios
-        .get('https://refugee--stories.herokuapp.com/stories/all')
+        .get('https://refugee--stories.herokuapp.com/stories/')
         .then(res => {
             console.log(res.data);
             setStoriesList(res.data);

@@ -47,7 +47,7 @@ const Navigation = () => {
            
           <NavigationLinks>     
             <StyledNavLink to="/">Home</StyledNavLink>      
-            <StyledNavLink to="/about">About</StyledNavLink>       
+            {/* <StyledNavLink to="/about">About</StyledNavLink>        */}
             <StyledNavLink to="/stories">Stories</StyledNavLink>       
             <StyledNavLink to="/submit">Submit Your Story</StyledNavLink>
             <StyledNavLink to="/login">Admin Login</StyledNavLink>    
