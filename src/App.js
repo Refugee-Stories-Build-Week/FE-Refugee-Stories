@@ -7,12 +7,14 @@ import Dashboard from './components/admin/Dashboard';
 import Home from './components/Home';
 import PrivateRoute from './components/admin/PrivateRoute'
 import Submit  from './components/admin/Submit';
+import StoriesGrid from './components/StoriesGrid'
 
 
 import StoryForm from './components/StoryForm'
 import { About, Stories, Navigation, Login } from './components';
 
-import Footer from "./components/Footer"
+import StoryPage from './components/StoryPage';
+import Footer from './components/Footer'
 
 
 
@@ -21,7 +23,7 @@ import Footer from "./components/Footer"
 //context
 import StoryContext from '../src/contexts/StoryContext';
 import StoriesToReview from './components/admin/StoriesToReview';
-import StoryPage from './components/StoryPage';
+
 
 
 const App = () => (
@@ -29,14 +31,14 @@ const App = () => (
     <Navigation />
     
     <Route exact path="/" component={Home} />
-    <Route exact path="/about" component={About} />
-    <Route exact path="/stories" component={Stories} />
+    {/* <Route exact path="/about" component={About} /> */}
+    <Route exact path="/stories" component={StoriesGrid} />
     
     <Route path="/submit" component={StoryForm}/>
     <Route exact path="/login" component={Login} />
 
     <PrivateRoute exact path="/dashboard" component={Dashboard} />
-    <Route path="/dashboard/story/:id" component={StoryPage} />
+    <Route exact path="/dashboard/story/:id" component={StoryPage} />
     <Route path="/story/:id" component={Submit} /> 
     <Route path="/StoryPage" component={StoryPage} />
     <Footer />
