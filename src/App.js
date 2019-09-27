@@ -38,7 +38,7 @@ const App = () => (
     <PrivateRoute exact path="/dashboard" component={Dashboard} />
     <Route path="/dashboard/story/:id" component={StoryPage} />
     <Route path="/story/:id" component={Submit} /> 
-
+    <Route path="/StoryPage" component={StoryPage} />
     <Footer />
   </div>
 
