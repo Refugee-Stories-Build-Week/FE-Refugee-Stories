@@ -15,9 +15,18 @@ const StoryPage = (props) => {
     list-style:none;
     
     `
+    const Request =styled.div`
+    display:inline-flex;
+      `
+      const P = styled.p`
+      margin-top:2rem;
+      width:100%;
+      `
    
     const Img = styled.img`
 margin-left:-5rem;
+height:500px
+width:700px;
     `
 const [story,setStory] = useState({})
 const getStory = () => {
@@ -36,23 +45,20 @@ useEffect(() => {
 }, [])
     return (
         <div>
-              
-        <Heading>{story.title}</Heading>
-            <div className="request-header">
+        <Heading>{story.title}</Heading>      
+        <Request>
         <Img src={story.url_img}></Img>
-        <Ul>
-            
-            <Li>{story.title}</Li>
-            <Li>{story.created_at}</Li>
-            
-            
-        </Ul>
-        </div>
-        <p>
-        {story.body}
-        </p>
-           
-        </div>
+  <Ul>
+      <Li>By : {story.author}</Li>
+      <Li>Location : {story.country}</Li>
+      <Li>Time : {story.created_at}</Li>
+      <Li><P>
+ {story.body}
+  </P></Li>
+  </Ul>
+  
+  </Request>
+  </div>
     )
 }
 

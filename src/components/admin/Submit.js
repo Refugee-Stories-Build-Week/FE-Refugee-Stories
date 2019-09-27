@@ -22,7 +22,6 @@ export default function RequestStory(props){
   const Img = styled.img`
 margin-left:15rem;
 
-<<<<<<< HEAD
   `
   const Request =styled.div`
 display:inline-flex;
@@ -31,8 +30,9 @@ display:inline-flex;
   margin-top:2rem;
   width:100%;
   `
-
-
+const Buttons = styled.div`
+margin-left:50%;
+`
 
 
 const [story,setStory] = useState({});
@@ -80,19 +80,21 @@ const approveStory = (id, data) => {
         <div>
               
               <Request>
-        <Img src={"https://rickandmortyapi.com/api/character/avatar/2.jpeg"}></Img>
+        <Img src={story.img_url}></Img>
         <Ul>
-            <Li>Name : {`Keshawn Sharper`}</Li>
-            <Li>Location : {`Philadelphia`}</Li>
-            <Li>Time : {`9:00pm`}</Li>
+            <Li>By : {story.author}</Li>
+            <Li>Location : {story.country}</Li>
+            <Li>Time : {story.created_at}</Li>
             <Li><P>
-       {`It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).`}
+       {story.body}
         </P></Li>
         </Ul>
         
         </Request>
+       <Buttons>
         <button onClick={() => approveStory(id)}>Approve</button>
         <button onClick={() => rejectStory(id)}>Reject</button>
+        </Buttons>
         </div>
     )
 }
