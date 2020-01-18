@@ -9,6 +9,7 @@ const Nav = styled.nav`
     background: #3C3C54;
     justify-content: flex-end;
     height: 80px;
+   
 `;
 
 
@@ -50,7 +51,8 @@ const Navigation = () => {
             {/* <StyledNavLink to="/about">About</StyledNavLink>        */}
             <StyledNavLink to="/stories">Stories</StyledNavLink>       
             <StyledNavLink to="/submit">Submit Your Story</StyledNavLink>
-            <StyledNavLink to="/login">Admin Login</StyledNavLink>    
+            <StyledNavLink to="/login">Login</StyledNavLink>
+            <StyledNavLink to="/register">Register</StyledNavLink>    
           </NavigationLinks>
 
       </Nav>

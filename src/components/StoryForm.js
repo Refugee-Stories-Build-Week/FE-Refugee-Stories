@@ -119,7 +119,7 @@ export default function FormikForm(){
   }, []);
 
   return (
-    <Formik initialValues={{ author: "", title: "", country: "", body: "" }} 
+    <Formik initialValues={{ author: "",img_url:"",title: "", country: "", body: "" }} 
             validationSchema={validationSchema}
             onSubmit={(values, {setSubmitting, resetForm, setStatus}) => {
             console.log(values)
@@ -159,6 +159,16 @@ export default function FormikForm(){
               onBlur={handleBlur}
               value={values.author}
               className={touched.author && errors.author ? "has-error"
+              : null}
+              /> 
+              <Inputs 
+              type='file' 
+              name='url_img' 
+              placeholder="image"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.url_img}
+              className={touched.url_img && errors.url_img ? "has-error"
               : null}
               /> 
 
