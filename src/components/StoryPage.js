@@ -5,20 +5,28 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 const StoryPage = (props) => {
     const Heading = styled.h2`
     text-align:center;
-    margin-bottom:3rem;
     `
-    const Ul = styled.ul`
-     
-      margin-bottom:10rem;
+    const Ul = styled.div`
+     padding: 0 10px; 
     `
-    const Li = styled.li`
+    const Li = styled.p`
     list-style:none;
     
     `
    
     const Img = styled.img`
-margin-left:-5rem;
+width: 50%;
+height: 50%;
     `
+
+const PageContainer = styled.div`
+    margin: 0 auto 70px auto;
+`;
+
+    const Container =styled.div`
+    display: flex;
+      `
+
 const [story,setStory] = useState({})
 const getStory = () => {
     axiosWithAuth()
@@ -35,24 +43,19 @@ useEffect(() => {
     getStory();
 }, [])
     return (
-        <div>
-              
-        <Heading>{story.title}</Heading>
-            <div className="request-header">
-        <Img src={story.url_img}></Img>
-        <Ul>
-            
-            <Li>{story.title}</Li>
-            <Li>{story.created_at}</Li>
-            
-            
-        </Ul>
-        </div>
-        <p>
-        {story.body}
-        </p>
-           
-        </div>
+        <PageContainer>
+            <Heading>{story.title}</Heading>
+            <Container>      
+                    <Img src={story.url_img} />
+                        <Ul>
+                            <Li>{story.title}</Li>
+                            <Li>{story.created_at}</Li>  
+                            <Li>
+                                <p>{story.body}</p>   
+                            </Li>
+                        </Ul>
+            </Container>    
+        </PageContainer>
     )
 }
 
